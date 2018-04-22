@@ -1,0 +1,31 @@
+body {
+    background-image: url(https://www.solarsystemscope.com/textures/download/8k_stars.jpg);
+}
+#green {
+    color: greenyellow;
+}
+
+.card, .card-header, .list-group-item, .card-footer {
+    background: rgba(204, 204, 204, 0.116); /* Fallback for older browsers without RGBA-support */
+    background: rgba(136, 134, 134, 0.151);
+}
+
+.nav-link {
+    background-color: rgba(73, 140, 185, 0.37);
+}
+
+.active .nav-link {
+    background-color: rgba(245, 245, 247, 0);
+}
+
+.nav-tabs .nav-item {
+    margin-right: 1%;
+}
+
+.red {
+    color: rgb(236, 109, 109);
+}
+
+img {
+    margin-top: 1%;
+}

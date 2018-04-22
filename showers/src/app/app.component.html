@@ -1,0 +1,15 @@
+<div class="container-fluid" style="text-align: center">
+  <div class="row" style="text-align: center">
+      <form style="text-align: center" class="col-lg-12" (submit)="viewTest()" name="myForm" ng-hide="myForm.$submitted">
+          <img src="https://i.imgur.com/yqytdr7.png">  
+        <fieldset>
+              <br>
+            <div class="form-group">
+                <input type="email" class="form-control col-lg-12" id="exampleInputEmail1" type="text" [(ngModel)]="city" name="cityName" placeholder="Please enter a zip code">
+              <small id="emailHelp" class="form-text text-muted">We only ask to get your coordinates.</small>
+            </div>
+          </fieldset><br>
+        </form>
+  </div>
+</div><br>
+<router-outlet></router-outlet>
