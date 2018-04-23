@@ -9,7 +9,8 @@ Meteor Watch provides users with upcoming meteor shower information based on the
 
 ## Built With
 
-* Java Spring
-* Spring Security
-* MySQL
-* D3
+* Node
+* Express
+* Angular
+* Bootstrap
+* Cheerio
