@@ -9,6 +9,15 @@ var cheerio = require('cheerio');
 var schedule = require('node-schedule');
 var where = require('node-where');
 var cities = require('cities');
+var geoip = require('geoip-lite');
+
+var getRemoteIP = function(request) {
+    var ip = request.headers['x-forwarded-for'] ||
+             request.connection.remoteAddress ||
+             request.socket.remoteAddress ||             
+             request.connection.socket.remoteAddress;
+    return ip;
+    }
 
 app.use(express.static( __dirname + '/showers/dist' ));
 app.use(express.static(path.join(__dirname, './static')));
@@ -17,20 +26,22 @@ app.get('/', function(req, res) {
 })
 
 app.get('/test', function(req, res) {
-    where.is(req.body.city, function(err, result) {
-        if (result) {
-            console.log('result', result);
-          Feed.load('https://in-the-sky.org/rss.php?feed=meteors&latitude=' + result.attributes.lat + '&longitude=' + result.attributes.lng + '&timezone=America/Los_Angeles', function(err, rss){
-            // console.log(rss.items);   
-            request(rss.items[0].url, function(err, resp, html) {
-                if (!err){
-                    const $ = cheerio.load(html);
-                    res.json({long: result.attributes.lng, lat: result.attributes.lat, feed: rss, message: $('.newsbody').find('p').text()});
-              }
-            });
-        });
-        }
-      });
+    // console.log(geoip.lookup(getRemoteIP(req)));
+    res.json({data: geoip.lookup(getRemoteIP(req))});
+    // where.is(req.body.city, function(err, result) {
+    //     if (result) {
+    //         console.log('result', result);
+    //       Feed.load('https://in-the-sky.org/rss.php?feed=meteors&latitude=' + result.attributes.lat + '&longitude=' + result.attributes.lng + '&timezone=America/Los_Angeles', function(err, rss){
+    //         // console.log(rss.items);   
+    //         request(rss.items[0].url, function(err, resp, html) {
+    //             if (!err){
+    //                 const $ = cheerio.load(html);
+    //                 res.json({long: result.attributes.lng, lat: result.attributes.lat, feed: rss, message: $('.newsbody').find('p').text()});
+    //           }
+    //         });
+    //     });
+    //     }
+    //   });
 })
 
 app.post('/test', function(req, res) {

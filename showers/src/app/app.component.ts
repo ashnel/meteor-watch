@@ -24,7 +24,7 @@ export class AppComponent {
     this.formSubmit = true;
     this.long;
     this.lat;
-    // this.test();
+    this.test();
   }
 
   viewTest () {
@@ -43,9 +43,10 @@ export class AppComponent {
   test () {
     let observable = this._httpService.getTest();
       observable.subscribe(data => {
-        this.text = data['message'];
-        this.long = data['long'];
-        this.lat = data['lat'];
+        console.log('in test', data);
+        // this.text = data['message'];
+        // this.long = data['long'];
+        // this.lat = data['lat'];
     });
   }
 }
