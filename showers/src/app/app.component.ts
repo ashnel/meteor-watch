@@ -47,6 +47,7 @@ export class AppComponent {
         // this.text = data['message'];
         // this.long = data['long'];
         // this.lat = data['lat'];
+        // test
     });
   }
 }
