@@ -4,8 +4,9 @@ Meteor Watch provides users with upcoming meteor shower information based on the
 
 ## Sample Images
 
-![current meteor shower](https://i.imgur.com/X3Z9vEs.png)
-![nonvisible meteor shower](https://i.imgur.com/Cj72802.png)
+![upcoming meteor showers](https://i.imgur.com/utMglcR.png)
+![current meteor shower](https://i.imgur.com/gdKNM94.png)
+![nonvisible meteor shower](https://i.imgur.com/U13kbA0.png)
 
 ## Built With
 
