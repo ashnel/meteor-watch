@@ -18,6 +18,8 @@ export class ViewComponent implements OnInit {
   feed: any;
   formSubmit: any;
   color: any;
+  date: any;
+  newTitle: any;
 
   constructor(
     private _httpService: HttpService,
@@ -39,7 +41,7 @@ export class ViewComponent implements OnInit {
       this.text = data['message'];
       this.long = data['long'];
       this.lat = data['lat'];
-      this.intro = data['intro'];
+      // this.intro = data['intro'];
       this.hour = data['hour'];
       this.view = data['view'];
       for(var i = data['feed'].length - 1; i >= 0; i--) {
@@ -74,9 +76,14 @@ export class ViewComponent implements OnInit {
       this.intro = data['intro'];
       this.hour = data['hour'];
       this.view = data['view'];
-      if(data['view'].includes('0')) {
+      if(data['view'].includes('0') || data['view'].includes('unobservable')) {
         this.color = 'red';
       }
+      else {
+        this.color = '';
+      }
+      this.date = data['date'];
+      this.newTitle = data['title'];
       // for(var i = data['feed'].length - 1; i >= 0; i--) {
       //   if(data['feed'][i].title.includes('days ago')) {
       //     data['feed'].splice(i, 1);

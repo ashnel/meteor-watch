@@ -1,8 +1,7 @@
 body {
     background-image: url(https://www.solarsystemscope.com/textures/download/8k_stars.jpg);
-}
-#green {
-    color: greenyellow;
+    padding: 4%;
+    padding-top: 1%;
 }
 
 .card, .card-header, .list-group-item, .card-footer {
@@ -28,4 +27,19 @@ body {
 
 img {
     margin-top: 1%;
+}
+
+.meteor-box {
+    display: inline-block;
+    margin: 2%;
+    margin-top: 0;
+    border: 1px white solid;
+    padding: 1%;
+    cursor: pointer;
+    background-color: rgba(73, 140, 185, 0.158);
+}
+
+#green {
+    color: greenyellow;
+    border: 1px greenyellow solid;
 }
